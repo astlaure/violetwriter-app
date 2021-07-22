@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
   load() {
-    this.httpClient.get('/api/auth/profile')
+    return this.httpClient.get('/api/auth/profile')
       .toPromise()
       .then(() => this.isAuthenticated = true)
       .catch(() => this.isAuthenticated = false);
