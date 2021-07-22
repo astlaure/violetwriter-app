@@ -1,0 +1,24 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.row {
+  width: 100%;
+  margin: 0 -1rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  .col {
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .md-6 {
+    @media screen and (min-width: 768px) {
+      width: calc(100% / 12 * 6 - 2rem);
+    }
+  }
+}
