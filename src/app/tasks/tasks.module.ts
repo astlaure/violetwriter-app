@@ -14,7 +14,7 @@ import { TaskService } from './task.service';
   imports: [
     CommonModule,
     HttpClientModule,
-    TasksRoutingModule
+    TasksRoutingModule,
   ],
   providers: [TaskService],
 })

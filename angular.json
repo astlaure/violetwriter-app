@@ -75,7 +75,8 @@
               "browserTarget": "violetwriter-app:build:production"
             },
             "development": {
-              "browserTarget": "violetwriter-app:build:development"
+              "browserTarget": "violetwriter-app:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
