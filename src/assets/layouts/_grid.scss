@@ -16,6 +16,12 @@
     width: 100%;
   }
 
+  .md-3 {
+    @media screen and (min-width: 768px) {
+      width: calc(100% / 12 * 3 - 2rem);
+    }
+  }
+
   .md-6 {
     @media screen and (min-width: 768px) {
       width: calc(100% / 12 * 6 - 2rem);
