@@ -1,0 +1,19 @@
+<div class="task-create">
+  <form [formGroup]="taskCreateForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="title">Title</label>
+      <input type="text" id="title" formControlName="title">
+    </div>
+    <div>
+      <label for="priority">Priority</label>
+      <select id="priority" formControlName="priority">
+<!--        <option *ngFor="let priority of taskPriority | keyvalue : originalOrder" value="{{priority.value}}">{{priority.key}}</option>-->
+        <option value="low">low</option>
+        <option value="medium">medium</option>
+        <option value="high">high</option>
+        <option value="critical">critical</option>
+      </select>
+    </div>
+    <button type="submit">Create</button>
+  </form>
+</div>
