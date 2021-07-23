@@ -1,9 +1,6 @@
-<p>task-list works!</p>
-
 <div>
-  <div *ngFor="let el of $data | async">
-    <p>{{el.title}}</p>
-    <p>{{el.priority}}</p>
+  <div>
+    <app-task-card *ngFor="let task of $data | async" [task]="task"></app-task-card>
   </div>
 
   <app-task-create></app-task-create>

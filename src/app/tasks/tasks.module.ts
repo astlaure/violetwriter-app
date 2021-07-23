@@ -7,18 +7,22 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { TaskService } from './task.service';
 import { TaskCreateComponent } from './task-create/task-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TaskCardComponent } from './task-card/task-card.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
     TaskListComponent,
-    TaskCreateComponent
+    TaskCreateComponent,
+    TaskCardComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     TasksRoutingModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   providers: [TaskService],
 })

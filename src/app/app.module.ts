@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { TasksModule } from './tasks/tasks.module';
 import { StartupService } from './startup.service';
+import { SharedModule } from './shared/shared.module';
 
 export function startupServiceFactory(startupService: StartupService): Function {
   return () => startupService.init();
@@ -20,6 +21,7 @@ export function startupServiceFactory(startupService: StartupService): Function 
     AppRoutingModule,
     AuthModule,
     TasksModule,
+    SharedModule,
   ],
   providers: [
     StartupService,

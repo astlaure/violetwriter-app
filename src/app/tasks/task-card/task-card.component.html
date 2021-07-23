@@ -1,0 +1,7 @@
+<div>
+  <p>{{task?.title}}</p>
+  <p>{{task?.priority}}</p>
+  <p>{{task!!.timer | time}}</p>
+  <button type="button" (click)="timerStart()">Start</button>
+  <button type="button" (click)="timerStop()">Stop</button>
+</div>
