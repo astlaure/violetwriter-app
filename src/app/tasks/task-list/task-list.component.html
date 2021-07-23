@@ -1,20 +1,20 @@
 <div>
-  <div>
+  <div class="container">
     <div class="row">
       <div class="col md-3">
-        <h1>LOW</h1>
+        <h1 style="text-align: center">LOW</h1>
         <app-task-card *ngFor="let task of tasks.low" [task]="task"></app-task-card>
       </div>
       <div class="col md-3">
-        <h1>MEDIUM</h1>
+        <h1 style="text-align: center">MEDIUM</h1>
         <app-task-card *ngFor="let task of tasks.medium" [task]="task"></app-task-card>
       </div>
       <div class="col md-3">
-        <h1>HIGH</h1>
+        <h1 style="text-align: center">HIGH</h1>
         <app-task-card *ngFor="let task of tasks.high" [task]="task"></app-task-card>
       </div>
       <div class="col md-3">
-        <h1>CRITICAL</h1>
+        <h1 style="text-align: center">CRITICAL</h1>
         <app-task-card *ngFor="let task of tasks.critical" [task]="task"></app-task-card>
       </div>
     </div>

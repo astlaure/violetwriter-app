@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Task } from '../task.model';
 import { HttpClient } from '@angular/common/http';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task-card',
@@ -12,7 +13,7 @@ export class TaskCardComponent implements OnInit {
   interval: any = null;
   saveInterval: any = null;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private taskService: TaskService) { }
 
   ngOnInit(): void {}
 
@@ -23,7 +24,7 @@ export class TaskCardComponent implements OnInit {
     this.saveInterval = setInterval(() => {
       this.httpClient.patch(`/api/tasks/${this.task!!.id}`, { timer: this.task?.timer })
         .subscribe();
-    }, 10 * 60 * 1000);
+    }, 5 * 60 * 1000);
   }
 
   timerStop() {
@@ -39,5 +40,10 @@ export class TaskCardComponent implements OnInit {
     this.task!!.timer = 0;
     this.httpClient.patch(`/api/tasks/${this.task!!.id}`, { timer: this.task?.timer })
       .subscribe();
+  }
+
+  complete() {
+    this.httpClient.delete(`/api/tasks/${this.task!!.id}`)
+      .subscribe(() => this.taskService.fetchTasks());
   }
 }

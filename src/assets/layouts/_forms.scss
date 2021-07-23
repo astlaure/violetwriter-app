@@ -2,8 +2,12 @@ form {
   .form-group {
     margin-bottom: 0.5rem;
 
-    input {
+    input, select {
       width: 100%;
+    }
+
+    select {
+      padding: 0.25rem;
     }
   }
 }

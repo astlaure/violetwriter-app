@@ -21,10 +21,10 @@ export class TaskListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.taskService.$tasks.subscribe((values) => {
-      this.tasks.low = values.filter((task) => task.priority === TaskPriority.LOW);
-      this.tasks.medium = values.filter((task) => task.priority === TaskPriority.MEDIUM);
-      this.tasks.high = values.filter((task) => task.priority === TaskPriority.HIGH);
-      this.tasks.critical = values.filter((task) => task.priority === TaskPriority.CRITICAL);
+      this.tasks.low = values.filter((task) => task.priority === TaskPriority.LOW && !task.done);
+      this.tasks.medium = values.filter((task) => task.priority === TaskPriority.MEDIUM && !task.done);
+      this.tasks.high = values.filter((task) => task.priority === TaskPriority.HIGH && !task.done);
+      this.tasks.critical = values.filter((task) => task.priority === TaskPriority.CRITICAL && !task.done);
     });
   }
 
